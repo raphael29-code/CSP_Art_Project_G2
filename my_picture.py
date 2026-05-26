@@ -8,41 +8,36 @@ def draw_picture(width, height):
     
     # make some variables available
     colors = ["red", "green", "blue", "cyan", "magenta", "yellow"]
-    
-    triangle_height = height/20
-    triangle_width = width / 30
-    
-    # Draw the tesselation
-    # code for red triangles
-    sg.set_fill_color(colors[0])
-    
-    # call fill
-    sg.fill_circle(450, 50,50)
 
-    # draw a mountain
-    sg.set_fill_color("#827e7e") # relatively dark gray
-    sg. fill_triangle(300, 150, 400, 20, 350, 150)
-    sg.set_fill_color("#c7c1c1") # lighter gray
-    sg. fill_triangle(350, 150, 400, 20, 550, 150)
-
-    # draw horizon
-    sg.set_outline_color("black")
-    sg.set_line_thickness(1)
-    sg.draw_line(0, 150, 600, 150
+    def draw_ear_and_ribbon():
+        sg.set_fill_color("#000000")
+        sg.fill_rectangle((width/30)*15, (height/20)*3, (width/30), (height/20))
+        sg.fill_rectangle((width/30)*16, (height/20)*2, (width/30)*2, (height/20))
+        sg.fill_rectangle((width/30)*18, (height/20)*3, (width/30), (height/20))
+        sg.fill_rectangle((width/30)*19, (height/20)*4, (width/30), (height/20))
+        sg.fill_rectangle((width/30)*15, (height/20)*7, (width/30)*3, (height/20))
+        sg.fill_rectangle((width/30)*17, (height/20)*6, (width/30), (height/20))
+        sg.fill_rectangle((width/30)*18, (height/20)*8, (width/30)*3, (height/20))
+        sg.fill_rectangle((width/30)*18, (height/20)*5, (width/30)*3, (height/20))
+        sg.fill_rectangle((width/30)*20, (height/20)*3, (width/30)*3, (height/20))
+        sg.fill_rectangle((width/30)*20, (height/20)*8, (width/30), (height/20)*2)
+        sg.fill_rectangle((width/30)*16, (height/20)*2, (width/30)*2, (height/20))
+        sg.fill_rectangle((width/30)*23, (height/20)*4, (width/30), (height/20)*3)
+        sg.fill_rectangle((width/30)*21, (height/20)*6, (width/30)*2, (height/20))
+        sg.fill_rectangle((width/30)*21, (height/20)*7, (width/30), (height/20))
+        sg.fill_rectangle((width/30)*23, (height/20)*9, (width/30), (height/20))
+        sg.fill_rectangle((width/30)*24, (height/20)*7, (width/30), (height/20)*2)
     
-    # Define the points the curve should bend through
-    river_points = [
-        (100, 150), # Start point
-        (300, 200), # Bends towards here
-        (200, 350), # Bends back here
-        (500, 500)  # End point
-    ]
-
-    sg.set_outline_color("blue")
-    sg.set_line_thickness(8)
-    sg.draw_curve(river_points)
+        sg.set_fill_color(colors[0])
+        sg.set_outline_color("red")
     
-
+        sg.fill_rectangle((width/30)*21, (height/20)*8, (width/30)*2, (height/20)*2)
+        sg.fill_rectangle((width/30)*22, (height/20)*7, (width/30)*2, (height/20)*2)
+        sg.fill_rectangle((width/30)*18, (height/20)*6, (width/30*3), (height/20)*2)
+        sg.fill_rectangle((width/30)*15, (height/20)*4, (width/30)*2, (height/20)*3)
+        sg.fill_rectangle((width/30)*16, (height/20)*3, (width/30)*2, (height/20)*3)
+        sg.fill_rectangle((width/30)*18, (height/20)*4, (width/30), (height/20))
+    
 if __name__ == "__main__":
     # Launch the wrapper; only edit starting dimensions of canvas if you would like to
     sg.start(draw_picture, 600, 400)

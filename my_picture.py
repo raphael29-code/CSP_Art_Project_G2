@@ -9,8 +9,8 @@ def draw_picture(width, height):
     # make some variables available
     colors = ["red", "green", "blue", "cyan", "magenta", "yellow"]
     
-    triangle_height = height/5
-    triangle_width = width / 3
+    triangle_height = height/20
+    triangle_width = width / 30
     
     # Draw the tesselation
     # code for red triangles

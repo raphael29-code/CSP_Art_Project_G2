@@ -11,6 +11,7 @@ def draw_picture(width, height):
     
     draw_ear_and_ribbon(width, height)
     bottom_right(width, height)
+    draw_eyes_and_mouth(width, height)
 
 def bottom_right(width, height):
     sg.set_fill_color("black")
@@ -52,7 +53,21 @@ def draw_ear_and_ribbon(width, height):
     sg.fill_rectangle((width/30)*15, (height/20)*4, (width/30)*2, (height/20)*3)
     sg.fill_rectangle((width/30)*16, (height/20)*3, (width/30)*2, (height/20)*3)
     sg.fill_rectangle((width/30)*18, (height/20)*4, (width/30), (height/20))
+
+def draw_eyes_and_mouth(width, height):
+    sg.set_fill_color("black")
+    sg.set_outline_color("black")
+
+
+    sg.fill_rectangle((width/30)*18, (height/20)*11, (width/30), (height/20)*2)
+    sg.fill_rectangle((width/30)*11, (height/20)*11, (width/30), (height/20)*2)
     
+    sg.set_fill_color("yellow")
+    sg.set_outline_color("yellow")
+
+    sg.fill_rectangle((width/30)*14, (height/20)*13, (width/30)*2, (height/20))
+
+
 if __name__ == "__main__":
     # Launch the wrapper; only edit starting dimensions of canvas if you would like to
     sg.start(draw_picture, 600, 400)

@@ -67,6 +67,49 @@ def draw_eyes_and_mouth(width, height):
 
     sg.fill_rectangle((width/30)*14, (height/20)*13, (width/30)*2, (height/20))
 
+def draw_picture(width, height):
+
+    sg.set_fill_color("black")
+
+    cell_size = 20
+
+    pixels = [
+        (7, 2), (8, 2),
+
+        (9, 3), (10, 3), (11, 3),
+
+        (6, 3),
+        (6, 4),
+
+        (6, 5), (7, 5),
+
+        (6, 6),
+        (6, 7),
+
+        (5, 8),
+
+        (3, 9), (4, 9), (5, 9), (6, 9),
+
+        (6, 10), (7, 10),
+
+        (4, 11), (5, 11), (6, 11),
+
+        (7, 12),
+
+        (8, 13), (9, 13),
+
+        (10, 14), (11, 14), (12, 14), (13, 14)
+    ]
+
+    sg.set_fill_color("black")
+    sg.set_outline_color("black")
+
+    for col, row in pixels:
+
+        x = col * cell_size
+        y = row * cell_size
+
+        sg.fill_rectangle(x, y, cell_size, cell_size)
 
 if __name__ == "__main__":
     # Launch the wrapper; only edit starting dimensions of canvas if you would like to

@@ -10,8 +10,21 @@ def draw_picture(width, height):
     colors = ["red", "green", "blue", "cyan", "magenta", "yellow"]
     
     draw_ear_and_ribbon(width, height)
+    bottom_right(width, height)
     draw_eyes_and_mouth(width, height)
 
+def bottom_right(width, height):
+    sg.set_fill_color("black")
+    sg.set_outline_color("black")
+    sg.fill_rectangle((width/30)*15, (height/20)*17, (width/30)*4, (height/20))
+    sg.fill_rectangle((width/30)*19, (height/20)*16, (width/30)*2, (height/20))
+    sg.fill_rectangle((width/30)*21, (height/20)*15, (width/30), (height/20))
+    sg.fill_rectangle((width/30)*22, (height/20)*14, (width/30)*3, (height/20))
+    sg.fill_rectangle((width/30)*21, (height/20)*13, (width/30)*2, (height/20))
+    sg.fill_rectangle((width/30)*22, (height/20)*12, (width/30)*4, (height/20))
+    sg.fill_rectangle((width/30)*23, (height/20)*11, (width/30), (height/20))
+    sg.fill_rectangle((width/30)*21, (height/20)*10, (width/30)*2, (height/20))
+    
 def draw_ear_and_ribbon(width, height):
     sg.set_fill_color("#000000")
     sg.fill_rectangle((width/30)*15, (height/20)*3, (width/30), (height/20))

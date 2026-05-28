@@ -12,6 +12,7 @@ def draw_picture(width, height):
     draw_ear_and_ribbon(width, height)
     bottom_right(width, height)
     draw_eyes_and_mouth(width, height)
+    draw_left(width, height)
 
 def bottom_right(width, height):
     sg.set_fill_color("black")
@@ -27,6 +28,7 @@ def bottom_right(width, height):
     
 def draw_ear_and_ribbon(width, height):
     sg.set_fill_color("#000000")
+    sg.set_outline_color("#000000")
     sg.fill_rectangle((width/30)*15, (height/20)*3, (width/30), (height/20))
     sg.fill_rectangle((width/30)*16, (height/20)*2, (width/30)*2, (height/20))
     sg.fill_rectangle((width/30)*18, (height/20)*3, (width/30), (height/20))
@@ -67,49 +69,56 @@ def draw_eyes_and_mouth(width, height):
 
     sg.fill_rectangle((width/30)*14, (height/20)*13, (width/30)*2, (height/20))
 
-def draw_picture(width, height):
+def draw_left(width, height):
 
     sg.set_fill_color("black")
 
-    cell_size = 20
+    cell_width = width / 30
+    cell_height = height / 20
 
     pixels = [
-        (7, 2), (8, 2),
+        (8, 3), (9, 3),(10, 3),
 
-        (9, 3), (10, 3), (11, 3),
+        (11, 4), (12, 4), (13, 4),
+        
+        (14, 4),
+        (14, 5),
+        (14, 6),
+        (14, 7),
 
-        (6, 3),
-        (6, 4),
+        (7, 4),
+        (7, 5),
+        (7, 6),
 
-        (6, 5), (7, 5),
+        (8, 7),
+        
+        (7, 8),
+        (7, 9),
+        (7, 10),
+        
+        (6, 11),
+        
+        (4, 12), (5, 12), (6, 12), (7, 12),
 
-        (6, 6),
-        (6, 7),
+        (7, 13), (8, 13),
 
-        (5, 8),
+        (5, 14), (6, 14), (7, 14),
 
-        (3, 9), (4, 9), (5, 9), (6, 9),
+        (8, 15),
 
-        (6, 10), (7, 10),
+        (9, 16), (10, 16),
 
-        (4, 11), (5, 11), (6, 11),
-
-        (7, 12),
-
-        (8, 13), (9, 13),
-
-        (10, 14), (11, 14), (12, 14), (13, 14)
+        (11, 17), (12, 17), (13, 17), (14, 17)
     ]
 
     sg.set_fill_color("black")
     sg.set_outline_color("black")
 
     for col, row in pixels:
+        x = col * cell_width
+        y = row * cell_height
 
-        x = col * cell_size
-        y = row * cell_size
-
-        sg.fill_rectangle(x, y, cell_size, cell_size)
+        sg.fill_rectangle(x, y, cell_width, cell_height)
 
 if __name__ == "__main__":
     # Launch the wrapper; only edit starting dimensions of canvas if you would like to
